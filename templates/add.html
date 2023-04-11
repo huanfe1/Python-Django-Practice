@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>加法计算器</title>
+    </head>
+    <body>
+        <div>
+            <span>数字1</span>
+            <input type="number" id="num1" />
+        </div>
+        <div>
+            <span>数字2</span>
+            <input type="number" id="num2" />
+        </div>
+        <button id="button">计算结果</button>
+        <div id="result"></div>
+        <script>
+            const num1 = document.querySelector("#num1");
+            const num2 = document.querySelector("#num2");
+            document.querySelector("#button").addEventListener("click", () => {
+                if (!num1.value || !num2.value) return;
+                fetch("/getadd/?num1=" + num1.value + "&num2=" + num2.value)
+                    .then((data) => data.text())
+                    .then((res) => {
+                        document.querySelector("#result").innerHTML = "结果是：" + res;
+                    });
+            });
+        </script>
+    </body>
+</html>
