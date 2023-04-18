@@ -5,7 +5,7 @@
         <title>Document</title>
     </head>
     <body>
-        {% include 'header.html' %}
+        {% extends 'base.html' %} {% block content %}
         <ul>
             {% for user in ulist %}
             <li>
@@ -17,6 +17,6 @@
             </li>
             {% endfor %}
         </ul>
-        {% include 'footer.html' %}
+        {% endblock %}
     </body>
 </html>
