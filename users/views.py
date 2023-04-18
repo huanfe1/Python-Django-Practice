@@ -4,7 +4,13 @@ from django.shortcuts import redirect
 
 
 def index(request):
-    return render(request, 'login.html')
+    userlist = [
+        {'name': 'zhangsan', 'age': 18, 'sex': '男'},
+        {"name": 'lili', 'age': 17, 'sex': "女"},
+        {"name": "wangzheng", 'age': 18, "sex": "女"},
+        {"name": "chaochuan", 'age': 18, "sex": "男"},
+    ]
+    return render(request, 'index.html', {"ulist": userlist})
 
 
 def login(request):

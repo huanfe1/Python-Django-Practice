@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <ul>
+            {% for user in ulist %}
+            <li>
+                {% if forloop.first %}
+                <p>这是第一个用户信息</p>
+                {% elif forloop.last %}
+                <p>这是最后一个用户信息</p>
+                {% endif %} {{ user.name | cut:"san" }} : {{user.age}}, {{user.sex}};
+            </li>
+            {% endfor %}
+        </ul>
+        {% include 'footer.html' %}
+    </body>
+</html>
