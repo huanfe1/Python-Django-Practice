@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'goods',
     'xadmin',
     'crispy_forms',
-    'django.conf'
+    'django.conf',
+    'DjangoUeditor',
 ]
 
 MIDDLEWARE = [

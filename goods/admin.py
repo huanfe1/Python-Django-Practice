@@ -13,6 +13,7 @@ class GoodsInfoAdmin(object):
     list_editable = ('price', 'weight')
     list_filter = ['name', 'price']
     search_fields = ('name',)
+    style_fields = {'details': 'ueditor'}
 
 
 class GlobalSettings(object):
