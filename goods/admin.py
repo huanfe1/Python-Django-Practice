@@ -1,29 +1,25 @@
-from django.contrib import admin
-from goods.models import GoodsInfo
-from django.utils.html import mark_safe
+import xadmin
+from .models import GoodsInfo
+from xadmin import views
 
 
-class GoodsInfoAdmin(admin.ModelAdmin):
-    def buttons(self, obj):
-        button_html = '''
-        <a class="changelink" href="http://127.0.0.1:8000/admin/goods/goodsinfo/%s/change/">编辑</a>
-        ''' % obj.id
-        return mark_safe(button_html)
+class BaseSetting(object):
+    enable_themes = True
+    use_bootswatch = True
 
-    buttons.short_description = '操作'
 
-    def good_img(self, obj):
-        img_html = '''
-        <img src="/%s" width="40px" height="40px">
-        ''' % obj.image
-        return mark_safe(img_html)
-
-    good_img.short_description = '商品图片'
-    list_display = ('id', 'name', 'price', 'isnew', 'buttons', 'good_img')
-    list_editable = ('price', 'isnew')
+class GoodsInfoAdmin(object):
+    list_display = ('id', 'name', 'price', 'weight', 'isnew')
+    list_editable = ('price', 'weight')
+    list_filter = ['name', 'price']
     search_fields = ('name',)
 
 
-admin.site.register(GoodsInfo, GoodsInfoAdmin)
-admin.site.site_header = '商品信息管理后台'
-admin.site.site_title = '后台管理系统'
+class GlobalSettings(object):
+    site_title = '商品后台管理系统'
+    site_footer = '版权归属@东营科技有限公司'
+
+
+xadmin.site.register(GoodsInfo, GoodsInfoAdmin)
+xadmin.site.register(views.BaseAdminView, BaseSetting)
+xadmin.site.register(views.CommAdminView, GlobalSettings)

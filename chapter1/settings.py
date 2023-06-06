@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'users',
     'book',
     'goods',
+    'xadmin',
+    'crispy_forms',
+    'django.conf'
 ]
 
 MIDDLEWARE = [

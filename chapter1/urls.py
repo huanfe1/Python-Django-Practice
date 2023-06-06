@@ -19,12 +19,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+import xadmin
 
 urlpatterns = [
     path('users/', include('users.urls')),
     path('book/', include('book.urls')),
     path('admin/', admin.site.urls),
-    path('goods/', include('goods.urls'))
+    path('goods/', include('goods.urls')),
+    path('xadmin/', xadmin.site.urls),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
