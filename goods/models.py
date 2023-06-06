@@ -3,7 +3,7 @@ from django.db import models
 
 
 class GoodsInfo(models.Model):
-    name = UEditorField(max_length=30, verbose_name='商品名称')
+    name = models.CharField(max_length=30, verbose_name='商品名称')
     price = models.FloatField(verbose_name='商品价格', default=20.0)
     weight = models.IntegerField(verbose_name='商品重量', default=500)
     image = models.ImageField(upload_to='upload/%Y/%m', verbose_name='商品图片', default='upload/default.jpg')
