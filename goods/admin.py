@@ -1,6 +1,7 @@
 import xadmin
-from .models import GoodsInfo
 from xadmin import views
+
+from .models import GoodsInfo
 
 
 class BaseSetting(object):

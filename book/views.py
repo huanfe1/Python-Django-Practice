@@ -1,6 +1,6 @@
-from django.shortcuts import render
 from book.models import BookClass, BookInfo, AuthorInfo
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.views.generic.list import ListView
 
 

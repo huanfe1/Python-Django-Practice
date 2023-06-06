@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -19,7 +18,8 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=30, verbose_name='商品名称')),
                 ('price', models.FloatField(default=20.0, verbose_name='商品价格')),
                 ('weight', models.IntegerField(default=500, verbose_name='商品重量')),
-                ('image', models.ImageField(default='upload/default.jpg', upload_to='upload/%Y/%m', verbose_name='商品图片')),
+                ('image',
+                 models.ImageField(default='upload/default.jpg', upload_to='upload/%Y/%m', verbose_name='商品图片')),
                 ('isnew', models.BooleanField(default=False, verbose_name='是否新品')),
                 ('details', DjangoUeditor.models.UEditorField(default='', verbose_name='商品详情')),
             ],

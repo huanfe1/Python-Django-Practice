@@ -1,5 +1,5 @@
-from django.contrib import admin
 from book.models import BookClass, BookInfo, BookISBN, AuthorInfo
+from django.contrib import admin
 
 
 class BookinfoAdmin(admin.ModelAdmin):

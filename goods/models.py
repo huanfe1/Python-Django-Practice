@@ -1,5 +1,5 @@
-from django.db import models
 from DjangoUeditor.models import UEditorField
+from django.db import models
 
 
 class GoodsInfo(models.Model):
